@@ -8,4 +8,5 @@ import java.util.Optional;
 
 public interface WeatherRepo extends JpaRepository<Weather, Integer> {
     Optional<Weather> findByCityId(Integer id);
+    Weather findByCityName(String name);
 }

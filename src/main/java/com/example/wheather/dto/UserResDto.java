@@ -13,6 +13,5 @@ import java.util.Set;
 public class UserResDto {
     private Integer id;
     private String username;
-    private String password;
     private Set<City> cities;
 }

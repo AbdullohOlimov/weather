@@ -15,11 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class WeatherController {
     private final WeatherService weatherService;
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/by-id")
     public ResponseEntity<?> updateData(@RequestParam Integer cityId) {
         return weatherService.updateDataById(cityId);
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/all")
     public ResponseEntity<?> updateData() {
         return weatherService.updateAllCity();

@@ -19,6 +19,6 @@ public class UserMapper {
     }
 
     public UserResDto toDto(Users user){
-        return new UserResDto(user.getId(), user.getUsername(), user.getPassword(), user.getCities());
+        return new UserResDto(user.getId(), user.getUsername(), user.getCities());
     }
 }
