@@ -1,5 +1,6 @@
 package com.example.wheather.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,7 @@ public class Users implements UserDetails {
     private String username;
     @Column(nullable = false)
     private String password;
-    @OneToMany
+    @OneToMany @JsonIgnore
     private Set<City> cities;
     private String role = "USER";
     private Boolean isActive = true;
