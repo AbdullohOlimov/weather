@@ -13,7 +13,7 @@ public class CityController {
     private final CityService cityService;
 
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')  or hasAnyRole('USER_ROLE')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')  or hasAnyRole('ROLE_USER')")
     @GetMapping()
     public ResponseEntity<?> findAllCities(){
        return cityService.getAllCity();

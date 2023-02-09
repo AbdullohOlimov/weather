@@ -32,7 +32,7 @@ public class UserController {
         return userService.findByIdUsers(id);
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     @PutMapping("update")
     public ResponseEntity<?> update(@RequestBody UserReqDto userReqDto){
         return userService.update(userReqDto);
