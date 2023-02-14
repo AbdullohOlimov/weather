@@ -19,13 +19,13 @@ import java.util.Set;
 @Data
 public class Users implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(unique = true, nullable = false)
     private String username;
     @Column(nullable = false)
     private String password;
-    @OneToMany @JsonIgnore
+    @ManyToMany @JsonIgnore
     private Set<City> cities;
     private String role = "USER";
     private Boolean isActive = true;
